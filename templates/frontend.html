@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex101 Clone</title>
+</head>
+<body>
+    <h1>Welcome to Regex101 Clone</h1>
+    <hr>
+    <form action="" method="POST">
+        <label>Enter Regular Expression</label>
+        <input type="text" name="regex" value="{{regex}}">
+        <br><br>
+        <label>Enter String</label>
+        <input type="text" name="string" value="{{string}}">
+        <br><br>
+        <button type="submit">Submit</button>
+        <br><br><br>
+        {% if count>0 %}
+        <p><h3>Result:</h3> {{ans}}<br>
+        <h3>Total Matches:</h3> {{count}}<br>
+        <h3>Locations: </h3><br>
+        {% for span in spans %}
+            {{span}}<br>
+        {% endfor %}
+        {% elif count==-1 %}
+        {% else %}
+        <p><h3>Result:</h3>Match Not Found!<br>
+        <h3>Total Matches:</h3> {{count}}<br>
+        {% endif %}
+        </p>
+    </form>
+    
+</body>
+</html>
